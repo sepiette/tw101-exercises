@@ -7,7 +7,12 @@ public class Main {
     public static void main(String[] args) {
 
         Accumulator accumulator = new Accumulator();
-
+        accumulator.increment();
+        accumulator.increment();
+        accumulator.increment();
+        accumulator.increment();
+        accumulator.increment();
+        accumulator.total();
 
     }
 }
