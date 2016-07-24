@@ -13,7 +13,25 @@ public class DiamondExercises {
 //             ***
 //            *****
     private static void drawAnIsoscelesTriangle(int n) {
-
+        // (2*n)-1 spaces per row
+        // ((2*n)-1)/2 ... 0 whitespaces per side
+        StringBuilder triangle = new StringBuilder();
+        int numWhiteSpaces = ((2*n)-1)/2;
+        //System.out.println(numWhiteSpaces);
+        for(int row = 1; row <= n; row++){
+            for(int col=1;col <= numWhiteSpaces;col++){
+                triangle.append(" ");
+            }
+            for(int ast=1; ast<=(2*row)-1;ast++){
+                triangle.append("*");
+            }
+            for(int col=1;col <= numWhiteSpaces;col++){
+                triangle.append(" ");
+            }
+            triangle.append("\n");
+            numWhiteSpaces --;
+        }
+        System.out.println(triangle.toString());
     }
 
 //    Diamond
@@ -24,6 +42,35 @@ public class DiamondExercises {
 //             ***
 //              *
     private static void drawADiamond(int n) {
+        StringBuilder triangle = new StringBuilder();
+        int numWhiteSpaces = ((2*n)-1)/2;
+        String [] rowMem = new String[n];
+
+        for(int row = 0; row < n; row++){
+            for(int col=1;col <= numWhiteSpaces;col++){
+                triangle.append(" ");
+            }
+            for(int ast=1; ast<=(2*row)-1;ast++){
+                triangle.append("*");
+            }
+            for(int col=1;col <= numWhiteSpaces;col++){
+                triangle.append(" ");
+            }
+            triangle.append("\n");
+            rowMem[row] = triangle.toString();
+            triangle.setLength(0);
+            numWhiteSpaces --;
+        }
+
+        for(int row = 0; row <n; row++){
+            triangle.append(rowMem[row]);
+        }
+
+        for(int row = n-2; row >=0; row--){
+            triangle.append(rowMem[row]);
+        }
+
+        System.out.println(triangle.toString());
 
     }
 
@@ -36,6 +83,34 @@ public class DiamondExercises {
 //            ***
 //             *
     private static void drawADiamondWithYourName(int n) {
+        StringBuilder triangle = new StringBuilder();
+        int numWhiteSpaces = ((2*n)-1)/2;
+        String [] rowMem = new String[n];
 
+        for(int row = 0; row < n; row++){
+            for(int col=1;col <= numWhiteSpaces;col++){
+                triangle.append(" ");
+            }
+            for(int ast=1; ast<=(2*row)-1;ast++){
+                triangle.append("*");
+            }
+            for(int col=1;col <= numWhiteSpaces;col++){
+                triangle.append(" ");
+            }
+            triangle.append("\n");
+            rowMem[row] = triangle.toString();
+            triangle.setLength(0);
+            numWhiteSpaces --;
+        }
+
+        for(int row = 0; row < n; row++){
+            triangle.append(rowMem[row]);
+        }
+        triangle.append("Sara\n");
+        for(int row = n-1; row >=0; row--){
+            triangle.append(rowMem[row]);
+        }
+
+        System.out.println(triangle.toString());
     }
 }
