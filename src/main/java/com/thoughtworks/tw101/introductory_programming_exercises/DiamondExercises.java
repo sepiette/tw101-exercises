@@ -25,9 +25,6 @@ public class DiamondExercises {
             for(int ast=1; ast<=(2*row)-1;ast++){
                 triangle.append("*");
             }
-            for(int col=1;col <= numWhiteSpaces;col++){
-                triangle.append(" ");
-            }
             triangle.append("\n");
             numWhiteSpaces --;
         }
@@ -52,9 +49,6 @@ public class DiamondExercises {
             }
             for(int ast=1; ast<=(2*row)-1;ast++){
                 triangle.append("*");
-            }
-            for(int col=1;col <= numWhiteSpaces;col++){
-                triangle.append(" ");
             }
             triangle.append("\n");
             rowMem[row] = triangle.toString();
@@ -94,9 +88,7 @@ public class DiamondExercises {
             for(int ast=1; ast<=(2*row)-1;ast++){
                 triangle.append("*");
             }
-            for(int col=1;col <= numWhiteSpaces;col++){
-                triangle.append(" ");
-            }
+
             triangle.append("\n");
             rowMem[row] = triangle.toString();
             triangle.setLength(0);
