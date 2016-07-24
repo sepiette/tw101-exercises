@@ -15,12 +15,7 @@ public class Node {
     }
 
     public void add(String nameOfNewNode) {
-        if(this == null){
-            new Node(nameOfNewNode);
-            return;
-        }
-        if (this.name.charAt(0) > nameOfNewNode.charAt(0) ||
-                (this.name.charAt(0) == nameOfNewNode.charAt(0) && this.name.charAt(1) > nameOfNewNode.charAt(1))){
+        if (this.name.compareToIgnoreCase(nameOfNewNode) > 0){
                 if(this.left != null){
                     this.left.add(nameOfNewNode);
                 }
@@ -29,14 +24,16 @@ public class Node {
                 }
         }
 
-        else if(this.name.charAt(0) < nameOfNewNode.charAt(0) ||
-             (this.name.charAt(0) == nameOfNewNode.charAt(0) && this.name.charAt(1) < nameOfNewNode.charAt(1))){
+        else if(this.name.compareToIgnoreCase(nameOfNewNode) < 0){
                 if(this.right != null){
                     this.right.add(nameOfNewNode);
                 }
                 else{
                     this.right = new Node(nameOfNewNode);
                 }
+        }
+        else{
+            return;
         }
     }
 
