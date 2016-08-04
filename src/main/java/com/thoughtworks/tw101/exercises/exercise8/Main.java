@@ -8,24 +8,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-           NumberGame game = new NumberGame();
-           int tempGuess = 0;
-           Scanner in = new Scanner(System.in);
-           System.out.println("Guess a Number:");
-
-           while (!game.checkWin()) {
-               try {
-                   tempGuess = Integer.parseInt(in.next());
-                   game.makeGuess(tempGuess);
-                   game.checkGuess();
-               }
-               catch (NumberFormatException e){
-                   System.out.println("Invalid. Enter a number.");
-               }
-
-           }
-            game.printGuesses();
-
-
+           NumberGame game = new NumberGame(System.in,System.out);
+           game.playGame();
     }
 }
